@@ -365,7 +365,7 @@
         chunkId = chunkIds[i];
         if (__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
           //如果installChunks已经有这个chunk的记录并且不是0，null,undefined（也就是代表是个加载中的promise）,那么触发resolve,并标记为0（已完成） 
-          //（f.j方法给他存的数据类型是这种 installedChunks:{'main':0,'async_module':[promise的resolve,promise的reject,promise]}）
+          //import()也就是异步加载chunk的成功回调在这里触发（f.j方法给他存的数据类型是这种 installedChunks:{'main':0,'async_module':[promise的resolve,promise的reject,promise]}）
           installedChunks[chunkId][0]();
         }
         debugger
