@@ -71,7 +71,8 @@
   /************************************************************************/
   /* webpack/runtime/chunk loaded */
   (() => {
-    var deferred = [];//存放内容 [[['log','log2'],()=>{ __webpack_require__('./src/index.js'),poriority（优先级）}]]
+    //此块区域用于父子依赖处理，在依赖chunk加载完毕后才会执行代码
+    var deferred = [];//存放内容 liru[[['log','log2'],()=>{ __webpack_require__('./src/index.js'),poriority（优先级）}]]
     __webpack_require__.O = (result, chunkIds, fn, priority) => {
       //如果参数携带chunkIds，说明依赖其他chunk，那么推进去
       if (chunkIds) {
